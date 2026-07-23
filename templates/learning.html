@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySphere | Personalized Learning</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/notes.css') }}">
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<h2>🎓 StudySphere</h2>
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/notes">AI Notes</a>
+
+<a href="/quiz">Smart Quiz</a>
+
+<a href="/planner">Study Planner</a>
+
+<a href="/learning">Personalized Learning</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🎓 Personalized Learning</h2>
+
+<p class="subtitle">
+Get AI recommendations based on your learning goals.
+</p>
+
+<div class="group">
+
+<label>Current Topic</label>
+
+<input
+type="text"
+id="topic"
+placeholder="Example: Binary Search">
+
+</div>
+
+<div class="group">
+
+<label>Current Skill Level</label>
+
+<select id="level">
+
+<option>Beginner</option>
+<option selected>Intermediate</option>
+<option>Advanced</option>
+
+</select>
+
+</div>
+
+<div class="group">
+
+<label>Learning Goal</label>
+
+<textarea
+id="goal"
+rows="5"
+placeholder="Example: Crack DSA Interviews"></textarea>
+
+</div>
+
+<button id="generateLearning">
+
+🎯 Generate Learning Path
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📈 Personalized Recommendations</h2>
+
+<div id="learningOutput">
+
+Your personalized roadmap will appear here...
+
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/learning.js') }}"></script>
+
+</body>
+
+</html>
+<a href="/">Home</a>
+<a href="/notes">AI Notes</a>
+<a href="/quiz">Smart Quiz</a>
+<a href="/planner">Study Planner</a>
+<a href="/learning" class="active">Personalized Learning</a>

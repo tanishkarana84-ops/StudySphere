@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudySphere Workspace</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/workspace.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>📘 StudySphere Workspace</h1>
+
+        <p>Generate AI-powered study material and assessments.</p>
+
+    </header>
+
+    <!-- Learning Configuration -->
+
+    <div class="card">
+
+        <h2>Learning Configuration</h2>
+
+        <div class="form-group">
+
+            <label>Subject</label>
+
+            <select id="subject">
+                <option>Computer Science</option>
+                <option>Mathematics</option>
+                <option>Artificial Intelligence</option>
+                <option>Data Structures</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Education Level</label>
+
+            <select id="level">
+                <option>School</option>
+                <option>Undergraduate</option>
+                <option>Postgraduate</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Topic</label>
+
+            <input
+                type="text"
+                id="topic"
+                placeholder="Example: Binary Search">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Reference Notes (Optional)</label>
+
+            <input type="file">
+
+        </div>
+
+        <button id="generateBtn">
+
+            ✨ Generate Learning Material
+
+        </button>
+
+    </div>
+
+    <!-- AI Output -->
+
+    <div class="card">
+
+        <h2>Generated Learning Material</h2>
+
+        <div id="output">
+
+            <p>Your AI notes will appear here...</p>
+
+        </div>
+
+    </div>
+
+    <!-- Assessment -->
+
+    <div class="card">
+
+        <h2>Assessment Configuration</h2>
+
+        <div class="form-group">
+
+            <label>Quiz Type</label>
+
+            <select>
+
+                <option>MCQ</option>
+
+                <option>Subjective</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Difficulty</label>
+
+            <select>
+
+                <option>Easy</option>
+
+                <option>Medium</option>
+
+                <option>Hard</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Questions</label>
+
+            <input
+                type="number"
+                value="10">
+
+        </div>
+
+        <button>
+
+            🚀 Start Assessment
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/workspace.js') }}"></script>
+
+</body>
+</html>

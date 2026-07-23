@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySphere | AI Study Planner</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/notes.css') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<h2>🎓 StudySphere</h2>
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/notes">AI Notes</a>
+
+<a href="/quiz">Smart Quiz</a>
+
+<a href="/planner">Study Planner</a>
+
+<a href="/learning">Personalized Learning</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🗓 AI Study Planner</h2>
+
+<p class="subtitle">
+Create a personalized day-wise study plan using AI.
+</p>
+
+<div class="group-row">
+
+    <div class="group">
+        <label>Number of Days</label>
+        <input
+            type="number"
+            id="days"
+            placeholder="e.g. 30">
+    </div>
+
+</div>
+
+<div class="group">
+
+    <label>Goal</label>
+
+    <textarea
+        id="goal"
+        rows="5"
+        placeholder="Example: Complete DSA and revise ML"></textarea>
+
+</div>
+
+<button id="generatePlan">
+    🗓 Generate Study Plan
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📅 Your Plan</h2>
+
+<div id="planOutput">
+Your personalized study plan will appear here...
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/planner.js') }}"></script>
+
+</body>
+
+</html>
+<a href="/">Home</a>
+<a href="/notes">AI Notes</a>
+<a href="/quiz">Smart Quiz</a>
+<a href="/planner" class="active">Study Planner</a>
+<a href="/learning">Personalized Learning</a>

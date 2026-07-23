@@ -1,0 +1,658 @@
+/* ==========================
+   StudySphere AI Chat
+   Part 1
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f8fc;
+    display:flex;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+
+    width:280px;
+    background:white;
+    border-right:1px solid #e5e7eb;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:25px;
+
+}
+
+.logo{
+
+    font-size:28px;
+    font-weight:700;
+    color:#2563EB;
+
+    margin-bottom:35px;
+
+}
+
+.new-chat{
+
+    background:linear-gradient(135deg,#2563EB,#06B6D4);
+
+    color:white;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    margin-bottom:40px;
+
+    transition:.3s;
+
+}
+
+.new-chat:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.history h3{
+
+    margin-bottom:20px;
+
+    color:#1e293b;
+
+}
+
+.history ul{
+
+    list-style:none;
+
+}
+
+.history li{
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    background:#EEF4FF;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.history li:hover{
+
+    background:#DBEAFE;
+
+}
+
+/* ================= Main ================= */
+
+.main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.top{
+
+    padding:30px;
+
+    background:white;
+
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+.top h2{
+
+    font-size:32px;
+
+    color:#1E293B;
+
+}
+
+.top p{
+
+    margin-top:8px;
+
+    color:#64748B;
+
+}
+
+/* ================= Chat Area ================= */
+
+.chat-area{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:40px;
+
+}
+
+.bot{
+
+    background:white;
+
+    max-width:700px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+    line-height:1.8;
+
+    color:#334155;
+
+}
+
+.user-message{
+
+    background:#2563EB;
+
+    color:white;
+
+    width:fit-content;
+
+    max-width:600px;
+
+    margin-left:auto;
+
+    margin-top:25px;
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+}
+
+/* ================= Input ================= */
+
+.input-box{
+
+    display:flex;
+
+    gap:15px;
+
+    padding:25px;
+
+    background:white;
+
+    border-top:1px solid #E5E7EB;
+
+}
+
+.input-box input{
+
+    flex:1;
+
+    padding:18px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+.input-box input:focus{
+
+    border-color:#2563EB;
+
+}
+
+.input-box button{
+
+    width:60px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563EB,#06B6D4);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+/* ==========================
+   StudySphere AI Chat
+   Part 2
+========================== */
+
+/* AI Response Cards */
+
+.ai-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    border-left:6px solid #2563EB;
+
+}
+
+.ai-card h3{
+
+    color:#2563EB;
+
+    margin-bottom:15px;
+
+}
+
+.ai-card p{
+
+    color:#475569;
+
+    line-height:1.8;
+
+}
+
+.button-group{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.action-btn{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#EEF4FF;
+
+    color:#2563EB;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.action-btn:hover{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+/* Chat Scrollbar */
+
+.chat-area::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.chat-area::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:10px;
+
+}
+
+.chat-area::-webkit-scrollbar-thumb:hover{
+
+    background:#94A3B8;
+
+}
+
+/* Typing Bubble */
+
+.typing{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:20px;
+
+}
+
+.typing span{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    animation:typing 1.2s infinite;
+
+}
+
+.typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes typing{
+
+0%{
+
+opacity:.3;
+
+transform:translateY(0);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+opacity:.3;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Welcome Message */
+
+.welcome{
+
+    text-align:center;
+
+    margin-top:80px;
+
+}
+
+.welcome h1{
+
+    font-size:48px;
+
+    color:#1E293B;
+
+    margin-bottom:20px;
+
+}
+
+.welcome p{
+
+    color:#64748B;
+
+    font-size:20px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.main{
+
+width:100%;
+
+}
+
+.chat-area{
+
+padding:20px;
+
+}
+
+.input-box{
+
+padding:18px;
+
+}
+
+.top{
+
+padding:20px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.top h2{
+
+font-size:24px;
+
+}
+
+.input-box{
+
+flex-direction:column;
+
+}
+
+.input-box button{
+
+width:100%;
+
+height:55px;
+
+}
+
+.user-message{
+
+max-width:100%;
+
+}
+
+.bot{
+
+max-width:100%;
+
+}
+
+.welcome h1{
+
+font-size:34px;
+
+}
+
+}
+
+/* Hover Effects */
+
+.bot:hover{
+
+transform:translateY(-2px);
+
+transition:.3s;
+
+}
+
+.ai-card:hover{
+
+transform:translateY(-3px);
+
+transition:.3s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.1);
+
+}
+
+.input-box button:hover{
+
+transform:scale(1.05);
+
+transition:.3s;
+
+}
+
+/* Fade Animation */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.bot,
+.user-message,
+.ai-card{
+
+animation:fadeIn .4s ease;
+
+}
+.ai-card{
+
+    background:white;
+
+    padding:25px;
+
+    margin-top:20px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    border-left:6px solid #2563EB;
+
+}
+
+.ai-card h3{
+
+    color:#2563EB;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.ai-card p{
+
+    color:#475569;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+}
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+
+}
+
+.action-btn{
+
+    border:none;
+
+    background:#EEF4FF;
+
+    color:#2563EB;
+
+    padding:14px 20px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.action-btn:hover{
+
+    background:#2563EB;
+
+    color:white;
+
+}

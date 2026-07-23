@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySphere | AI Notes</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notes.css') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<h2>🎓 StudySphere</h2>
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/notes">AI Notes</a>
+
+<a href="/quiz">Smart Quiz</a>
+
+<a href="/planner">Study Planner</a>
+
+<a href="/learning">Personalized Learning</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>📘 AI Notes Generator</h2>
+
+        <p class="subtitle">
+            Enter a topic and let AI create structured, easy-to-understand study notes.
+        </p>
+
+        <div class="row">
+
+            <div class="group">
+                <label>Topic / Chapter</label>
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="Example: Binary Search">
+            </div>
+
+            <div class="group">
+                <label>Education Level</label>
+                <select id="level">
+                    <option>School</option>
+                    <option selected>Undergraduate</option>
+                    <option>Postgraduate</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="group">
+
+            <label>Reference Material (Optional)</label>
+
+            <textarea
+                id="reference"
+                rows="6"
+                placeholder="Paste your notes or learning objectives here..."></textarea>
+
+        </div>
+
+        <div class="group">
+
+            <label>Explanation Level</label>
+
+            <select id="difficulty">
+                <option>Beginner</option>
+                <option selected>Intermediate</option>
+                <option>Advanced</option>
+            </select>
+
+        </div>
+
+        <button id="generateBtn">
+
+            ✨ Generate Notes
+
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>📚 Generated Notes</h2>
+
+        <div id="notesOutput">
+
+            Your AI-generated notes will appear here...
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/notes.js') }}"></script>
+
+</body>
+
+</html>
+<a href="/">Home</a>
+<a href="/notes" class="active">AI Notes</a>
+<a href="/quiz">Smart Quiz</a>
+<a href="/planner">Study Planner</a>
+<a href="/learning">Personalized Learning</a>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySphere | Smart Quiz</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/notes.css') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<h2>🎓 StudySphere</h2>
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/notes">AI Notes</a>
+
+<a href="/quiz">Smart Quiz</a>
+
+<a href="/planner">Study Planner</a>
+
+<a href="/learning">Personalized Learning</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>📝 Smart Quiz Generator</h2>
+
+        <p class="subtitle">
+            Generate AI-powered multiple-choice questions to test your understanding.
+        </p>
+
+        <div class="group">
+
+            <label>Topic</label>
+
+            <input
+                type="text"
+                id="topic"
+                placeholder="Example: Binary Search">
+
+        </div>
+
+        <div class="group">
+
+            <label>Difficulty</label>
+
+            <select id="difficulty">
+
+                <option>Easy</option>
+                <option selected>Medium</option>
+                <option>Hard</option>
+
+            </select>
+
+        </div>
+
+        <button id="generateQuizBtn">
+            📝 Generate Quiz
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>📋 Generated Quiz</h2>
+
+        <div id="quizOutput">
+            Your AI-generated quiz will appear here...
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+
+</body>
+
+</html>
+<a href="/">Home</a>
+<a href="/notes">AI Notes</a>
+<a href="/quiz" class="active">Smart Quiz</a>
+<a href="/planner">Study Planner</a>
+<a href="/learning">Personalized Learning</a>

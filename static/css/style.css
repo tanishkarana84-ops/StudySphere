@@ -1,0 +1,709 @@
+/* =====================================================
+   STUDYSPHERE CSS - PART 1
+   Reset + Navbar + Hero Section
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F8FAFC;
+    color:#1E293B;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    width:100%;
+    background:white;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+
+    width:90%;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    height:80px;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.logo i{
+
+    color:#2563EB;
+    font-size:32px;
+
+}
+
+.logo h2{
+
+    color:#2563EB;
+    font-size:30px;
+    font-weight:700;
+
+}
+
+nav ul{
+
+    display:flex;
+    list-style:none;
+    gap:40px;
+
+}
+
+nav ul li a{
+
+    text-decoration:none;
+    color:#334155;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#2563EB;
+
+}
+
+.nav-btn{
+
+    background:linear-gradient(135deg,#2563EB,#06B6D4);
+    color:white;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.25);
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    width:90%;
+    margin:auto;
+
+    min-height:90vh;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.hero-left{
+
+    flex:1;
+
+}
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:480px;
+    max-width:100%;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#DBEAFE;
+
+    color:#2563EB;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+}
+
+.hero-left h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero-left h1 span{
+
+    color:#2563EB;
+
+}
+
+.hero-left p{
+
+    color:#64748B;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-btn{
+
+    background:linear-gradient(135deg,#2563EB,#06B6D4);
+
+    color:white;
+
+    border:none;
+
+    padding:18px 38px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+
+.hero-btn i{
+
+    margin-left:10px;
+
+}
+
+.note{
+
+    margin-top:25px;
+
+    color:#64748B;
+
+    font-size:16px;
+
+}
+
+.note i{
+
+    color:#10B981;
+
+    margin-right:8px;
+
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+/* =====================================================
+   STUDYSPHERE CSS - PART 2
+   Features + Steps + Footer + Responsive
+===================================================== */
+
+/* ================= FEATURES ================= */
+
+.features{
+
+    width:90%;
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+.features h2{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.features p{
+
+    color:#64748B;
+
+    font-size:18px;
+
+    margin-bottom:50px;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.feature-card{
+
+    background:white;
+
+    padding:40px 30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+}
+
+.blue{
+
+    background:#DBEAFE;
+
+    color:#2563EB;
+
+}
+
+.green{
+
+    background:#DCFCE7;
+
+    color:#16A34A;
+
+}
+
+.orange{
+
+    background:#FFEDD5;
+
+    color:#EA580C;
+
+}
+
+.sky{
+
+    background:#E0F2FE;
+
+    color:#0284C7;
+
+}
+
+.feature-card h3{
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.feature-card p{
+
+    font-size:16px;
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+/* ================= HOW IT WORKS ================= */
+
+.steps{
+
+    width:90%;
+
+    margin:120px auto;
+
+    text-align:center;
+
+}
+
+.steps h2{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.steps p{
+
+    color:#64748B;
+
+    margin-bottom:60px;
+
+}
+
+.step-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.step{
+
+    flex:1;
+
+}
+
+.number{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+.number.green{
+
+    background:#22C55E;
+
+}
+
+.number.orange{
+
+    background:#F97316;
+
+}
+
+.step h3{
+
+    margin:25px 0 15px;
+
+    font-size:24px;
+
+}
+
+.step p{
+
+    font-size:16px;
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+.line{
+
+    width:120px;
+
+    height:4px;
+
+    background:#CBD5E1;
+
+    margin-top:38px;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:120px;
+
+    background:#0F172A;
+
+    color:white;
+
+    padding:50px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+footer h2{
+
+    margin-bottom:10px;
+
+}
+
+.social{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.social i{
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.social i:hover{
+
+    color:#38BDF8;
+
+    transform:translateY(-4px);
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:60px;
+
+}
+
+.hero-left{
+
+order:2;
+
+}
+
+.hero-right{
+
+order:1;
+
+}
+
+.hero-left h1{
+
+font-size:52px;
+
+}
+
+.hero-left p{
+
+font-size:18px;
+
+}
+
+.hero-right img{
+
+width:340px;
+
+}
+
+.step-container{
+
+flex-direction:column;
+
+}
+
+.line{
+
+display:none;
+
+}
+
+footer{
+
+flex-direction:column;
+
+gap:30px;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px;
+
+gap:20px;
+
+}
+
+nav ul{
+
+flex-direction:column;
+
+gap:15px;
+
+text-align:center;
+
+}
+
+.hero{
+
+padding:40px 5%;
+
+}
+
+.hero-left h1{
+
+font-size:40px;
+
+}
+
+.features h2,
+
+.steps h2{
+
+font-size:32px;
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+}
+
+}

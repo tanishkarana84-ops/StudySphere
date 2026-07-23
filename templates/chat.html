@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudySphere AI</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/chat.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            📘 StudySphere
+        </div>
+
+        <button class="new-chat">
+            <i class="fa-solid fa-plus"></i>
+            New Chat
+        </button>
+
+        <div class="history">
+
+            <h3>Recent Chats</h3>
+
+            <ul>
+                <li>Decision Trees</li>
+                <li>Python Loops</li>
+                <li>Machine Learning</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="top">
+            <h2>AI Learning Assistant</h2>
+            <p>Learn anything with AI.</p>
+        </div>
+
+        <div class="chat-area" id="chatArea">
+
+            <div class="bot">
+
+                👋 Hello! I'm StudySphere AI.
+
+                <br><br>
+
+                What would you like to learn today?
+
+            </div>
+
+        </div>
+
+        <!-- Input -->
+
+        <div class="input-box">
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Ask anything...">
+
+            <button id="sendBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+
+</html>
