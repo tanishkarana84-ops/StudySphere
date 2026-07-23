@@ -111,13 +111,11 @@ Pygments==2.20.0
 pyjokes==0.8.3
 pyparsing==3.3.2
 pypdf==6.10.2
-pypiwin32==223
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.2
 python-multipart==0.0.27
 pyttsx3==2.98
 pytz==2025.2
-pywin32==308
 PyYAML==6.0.3
 referencing==0.37.0
 regex==2026.4.4
